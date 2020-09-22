@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #555555;
+  font-family: "Mulish", sans-serif;
+}
+
+.label {
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+}
+
+.checkbox {
+  position: absolute;
+  left: -999px;
+}
+
+.label::before {
+  position: absolute;
+  left: -30px;
+  content: "";
+  background-color: #ffffff;
+  display: inline-block;
+  border: 2px solid #dddddd;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.label::after {
+  position: absolute;
+  left: -24px;
+  content: "\2713";
+  display: inline-block;
+  color: #2ecc71;
+  transform: scale(0);
+  transition: all 0.25s linear;
+}
+
+.checkbox:checked + .label::after {
+  transform: scale(1.5);
+}
